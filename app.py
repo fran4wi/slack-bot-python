@@ -38,6 +38,22 @@ def handle_event__team_join(event:dict, say:Callable[[dict,str,str],None]) -> No
     return
 
 
+@app.command("/fran")
+def fran_hong_ping_pong(ack: Callable[[], None], respond: Callable[[str], None]):
+    """
+    fran_hong_ping_pong : a command that's like the normal ping command , which returns "pong". 
+        - however, instead, the command is "/fran" and it returns "hong!"
+
+    Args:
+        ack (Callable[[], None]): used to tell slack you got the command request. 
+        respond (Callable[[str], None]): the response you give back to the end user.
+    """
+    # Acknowledge command request
+    ack()
+    respond(f"hong!")
+    
+
+
 if __name__ == "__main__":
     try:
         SocketModeHandler(app, os.environ["SLACK_APP_TOKEN"]).start()
