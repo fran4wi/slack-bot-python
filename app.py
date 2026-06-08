@@ -53,11 +53,6 @@ def fran_hong_ping_pong(ack: Callable[[], None], respond: Callable[[str], None])
     respond(f"hong!")
 
 
-@app.message("bingo")
-def handle_message_events(message, say):
-    say("bongo2")
-
-
 if __name__ == "__main__":
     try:
         SocketModeHandler(app, os.environ["SLACK_APP_TOKEN"]).start()
