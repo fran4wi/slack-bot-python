@@ -1,4 +1,4 @@
-# Slack Bot for Hong Slack
+# Francesca Hong Volunteer Slackbot
 
 > Slack app example from 📚 [Getting started with Bolt for Python](https://docs.slack.dev/tools/bolt-python/getting-started)
 
