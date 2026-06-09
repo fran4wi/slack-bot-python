@@ -6,7 +6,9 @@ jobs:
     runs-on: self-hosted
     steps:
       - name: Deploy Bot
-        run: env > /home/shinysocks/ENVVARS
+        run: |
+          env > $HOME/fran4wi-slackbot/.env
+          systemctl --user restart slackbot
         env:
           SLACK_BOT_TOKEN: ${{ vars.SLACK_BOT_TOKEN }}
           SLACK_APP_TOKEN: ${{ vars.SLACK_APP_TOKEN }}
