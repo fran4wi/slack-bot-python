@@ -37,16 +37,27 @@ def handle_event__team_join(event:dict, say:Callable[[dict,str,str],None]) -> No
     user_join.write_to_sheet(event)
     return
 
+@app.command("/test_welcome_message")
+def test_welcome_message(ack, body:dict, say):
+    """
+    test_welcome_message : a command we use to make sure our welcome message is formatted correctly. 
 
-@app.message("hello")
-def message_hello(message, say):
-    # app.client.chat_postMessage(
-    user_id=message.get("user")
+    Args:
+        ack (Callable[[], None]): used to tell slack you got the command request. 
+        body (dict ) : information on who and where the command was called. we are using it so that we can
+        see where the DM should be sent back to.
+        say(Callable[[dict,str,str],None]): the response you give back to the end user, through their DM's. 
+    """
+    # Acknowledge command request
+    ack()
+    # print(args.body)
+    
+    user_id=body.get("user_id")
     with open("templates/welcome.json") as f:
         welcome_text = f.read()
     welcome_json : dict = user_join.new_workspace_user_message(user_id)
     say(blocks=welcome_json, text="!", channel=user_id)
-        # user_join.write_to_sheet(event)
+    
 
 @app.command("/fran")
 def fran_hong_ping_pong(ack: Callable[[], None], respond: Callable[[str], None]):
