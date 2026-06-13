@@ -1,6 +1,8 @@
+<img width="150" height="150" alt="Robotic Fran" src="https://github.com/user-attachments/assets/1282652d-4ef2-4e65-b635-d3bc1929b3fd" />
+
 # Francesca Hong Volunteer Slackbot
 
-> Slack app example from 📚 [Getting started with Bolt for Python](https://docs.slack.dev/tools/bolt-python/getting-started)
+*An integration for the Friend of Francesca Hong Volunteer Slack*
 
 ## Overview
 
